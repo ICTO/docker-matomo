@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: piwik3-mysql
+    volumes:
+      - "piwik3dbdata:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: piwik
+      MYSQL_DATABASE: piwik
+      MYSQL_USER: piwik
+      MYSQL_PASSWORD: piwik
+  piwik3:
+    image: piwik:latest
+    container_name: piwik3
+    ports:
+      - "8000:80"
+volumes:
+  piwik3dbdata:
