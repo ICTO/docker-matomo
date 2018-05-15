@@ -1,7 +1,7 @@
 version: '3'
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:5.7
     container_name: piwik3-mysql
     volumes:
       - "piwik3dbdata:/var/lib/mysql"
